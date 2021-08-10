@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/App.css';
 import '../css/custom.css';
+import '../js/btd6info.js';
 import bg from '../static/backgrounds/btd6_background.png'
 
 function Title() {
