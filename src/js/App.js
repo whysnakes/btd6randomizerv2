@@ -17,6 +17,13 @@ function H4BTD6Font (props) {
   )
 }
 
+function BlackBorder(props) {
+  return (
+    <div className="transbox border border-dark rounded">
+      {props.children}
+    </div>
+  )
+}
 function Title() {
   return (
     <div className="transbox">
