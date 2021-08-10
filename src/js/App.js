@@ -28,7 +28,7 @@ function Results() {
 function Version() {
   return (
     <div class="transbox w-100 fixed-bottom text-end">
-				<a href="../CHANGELOG.md" id="pagefooter" class="cleanlink mx-2">
+				<a href="../../CHANGELOG.md" id="pagefooter" class="cleanlink mx-2">
           Version <strong>{BTD6Data.randomizer_version}</strong> based on BTD6 version <strong>{BTD6Data.btd6_version}</strong>
         </a>
 		</div>
