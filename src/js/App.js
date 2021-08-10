@@ -1,15 +1,50 @@
+import React from 'react';
 import '../css/App.css';
 import bg from '../static/backgrounds/btd6_background.png'
 
+function Title() {
+  return (
+    <div class="transbox">
+			<h2 class="text-center btd6font">Bloons TD6 Randomizer</h2>
+			<h4 class="text-center btd6font">Randomizes options for maps, hero selection, mode selection and tower selection</h4>
+		</div>	
+  );
+}
+
+function Options() {
+  return (
+    "spam"
+  );
+}
+
+function Results() {
+  return (
+    "eggs"
+  );
+}
+
+function Version() {
+  return (
+    <a href="./CHANGELOG.md" id="pagefooter" class="cleanlink mx-2"></a>
+  )
+}
 
 function App() {
   return (
     <div className="App">
-      <div classname="Title"></div>
-      <div classname="Options"></div>
-      <div classname="Results"></div>
+      <div className="Title">
+        <Title />
+      </div>
+      <div className="Options">
+        <Options />
+      </div>
+      <div className="Results">
+        <Results />
+      </div>
       <footer>
-        <div classname="Version"></div>
+        <div className="Version">
+          <Version />
+        </div>
       </footer>
     </div>
   );
