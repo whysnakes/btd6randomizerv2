@@ -20,21 +20,21 @@ function H4BTD6Font (props) {
 function Title() {
   return (
     <div className="transbox">
-			<h2 className="text-center btd6font">Bloons TD6 Randomizer</h2>
-			<h4 className="text-center btd6font">Randomizes options for maps, hero selection, mode selection and tower selection</h4>
+      <H2BTD6Font value={"Bloons TD6 Randomizer"} />
+      <H4BTD6Font value={"Randomizes options for maps, hero selection, mode selection and tower selection"} />
 		</div>	
   );
 }
 
 function Options() {
   return (
-    "spam"
+    <H2BTD6Font value={"Options"} />
   );
 }
 
 function Results() {
   return (
-    "eggs"
+    <H2BTD6Font value={"Results"} />
   );
 }
 
