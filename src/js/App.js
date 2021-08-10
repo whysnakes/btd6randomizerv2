@@ -5,6 +5,17 @@ import '../css/App.css';
 import '../css/custom.css';
 import * as BTD6Data from '../js/btd6info.js';
 
+function H2BTD6Font (props) {
+  return (
+    <h2 className="text-center btd6font">{props.value}</h2>
+  );
+}
+
+function H4BTD6Font (props) {
+  return (
+    <h4 className="text-center btd6font">{props.value}</h4>
+  )
+}
 
 function Title() {
   return (
