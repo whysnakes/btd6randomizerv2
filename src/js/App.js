@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container,Row,Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/App.css';
 import '../css/custom.css';
@@ -42,12 +43,20 @@ function App() {
       <div className="Title">
         <Title />
       </div>
-      <div className="Options">
-        <Options />
-      </div>
-      <div className="Results">
-        <Results />
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <div className="Options">
+              <Options />
+            </div>
+          </Col>
+          <Col>
+            <div className="Results">
+              <Results />
+            </div>
+          </Col>
+        </Row>
+      </Container>
       <footer>
         <div className="Version">
           <Version />
