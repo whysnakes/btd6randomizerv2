@@ -284,3 +284,15 @@ let btd6_towers_object = {
         "Engineer Monkey": "../static/btd6 towers png/000-EngineerMonkey.png"
     }
 };
+
+export {
+    btd6_version,
+    randomizer_version,
+    btd6_maps,
+    btd6_only_modes,
+    btd6_towers,
+    btd6_maps_object,
+    btd6_maps_by_difficulty_object,
+    btd6_heroes_object,
+    btd6_towers_object,
+};
