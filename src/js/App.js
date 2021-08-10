@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/App.css';
 import '../css/custom.css';
 import * as BTD6Data from '../js/btd6info.js';
