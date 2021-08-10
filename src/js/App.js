@@ -35,13 +35,17 @@ function Title() {
 
 function Options() {
   return (
-    <H2BTD6Font value={"Options"} />
+    <BlackBorder>
+      <H2BTD6Font value={"Options"} />
+    </BlackBorder>
   );
 }
 
 function Results() {
   return (
-    <H2BTD6Font value={"Results"} />
+    <BlackBorder>
+      <H2BTD6Font value={"Results"} />
+    </BlackBorder>
   );
 }
 
