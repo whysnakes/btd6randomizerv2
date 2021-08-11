@@ -5,16 +5,11 @@ import '../css/App.css';
 import '../css/custom.css';
 import * as BTD6Data from '../js/btd6info.js';
 
-function H2BTD6Font (props) {
-  return (
-    <h2 className="text-center btd6font">{props.value}</h2>
-  );
-}
 
-function H4BTD6Font (props) {
-  return (
-    <h4 className="text-center btd6font">{props.value}</h4>
-  )
+function TextBTD6Font(props) {
+  const Tag = props.tag;  // Declare with leading capital letter so that React treats is as a component.
+  const classes = props.classes + " btd6font";
+  return <Tag className={classes}>{props.value}</Tag>;
 }
 
 function BlackBorder(props) {
@@ -24,19 +19,20 @@ function BlackBorder(props) {
     </div>
   )
 }
+
 function Title() {
   return (
     <div className="transbox">
-      <H2BTD6Font value={"Bloons TD6 Randomizer"} />
-      <H4BTD6Font value={"Randomizes options for maps, hero selection, mode selection and tower selection"} />
-		</div>	
+      <TextBTD6Font tag={"h2"} value={"Bloons TD6 Randomizer"} classes={"text-center"} />
+      <TextBTD6Font tag={"h4"} value={"Randomizes options for maps, hero selection, mode selection and tower selection"} classes={"text-center"} />
+		</div>
   );
 }
 
 function Options() {
   return (
     <BlackBorder>
-      <H2BTD6Font value={"Options"} />
+      <TextBTD6Font tag={"h2"} value={"Options"} classes={"text-center"} />
     </BlackBorder>
   );
 }
@@ -44,7 +40,7 @@ function Options() {
 function Results() {
   return (
     <BlackBorder>
-      <H2BTD6Font value={"Results"} />
+      <TextBTD6Font tag={"h2"} value={"Results"} classes={"text-center"}/>
     </BlackBorder>
   );
 }
@@ -87,5 +83,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
