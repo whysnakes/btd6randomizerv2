@@ -16,7 +16,9 @@ function Options() {
 
     return (
       <BlackBorder>
-        <TextBTD6Font tag={"h2"} value={"Options"} classes={"text-center"} />
+        <TextBTD6Font tag={"h2"} className="text-center">
+          Options
+        </TextBTD6Font>
         <Form>
           <Form.Group as={Row} className="mb-3" controlId="player_count">
             <Form.Label column sm="auto">

@@ -7,7 +7,9 @@ import BlackBorder from './BlackBorder';
 function Results() {
     return (
       <BlackBorder>
-        <TextBTD6Font tag={"h2"} value={"Results"} classes={"text-center"}/>
+        <TextBTD6Font tag={"h2"} className="text-center">
+          Results
+        </TextBTD6Font>
       </BlackBorder>
     );
   }
