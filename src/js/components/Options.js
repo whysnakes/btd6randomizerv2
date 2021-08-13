@@ -3,6 +3,7 @@ import { Row, Col, Form, Button } from 'react-bootstrap';
 
 import TextBTD6Font from './TextBTD6Font';
 import BlackBorder from './BlackBorder';
+import CustomFormSwitch from './CustomFormSwitch';
 
 
 function Options() {
@@ -35,92 +36,28 @@ function Options() {
             </Col>
           </Form.Group>
 
-          <Form.Group as={Row} className="mb-3" controlId="random_map">
-            <Col sm="auto" className="pt-2">
-              <div className="form-check form-switch">
-                <input
-                  className="form-check-input"
-                  name="randomize_map"
-                  type="checkbox"
-                  checked={isRandomizeMap}
-                  onChange={() => setRandomizeMap(!(isRandomizeMap))}
-                />
-              </div>
-            </Col>
-            <Form.Label column sm="auto">
-              Randomize Map?
-            </Form.Label>
-          </Form.Group>
+          <CustomFormSwitch className="mb-3" checked={isRandomizeMap} onChange={() => setRandomizeMap(!(isRandomizeMap))}>
+            Randomize Map?
+          </CustomFormSwitch>
 
-          <Form.Group as={Row} className="mb-3" controlId="random_mode">
-            <Col sm="auto" className="pt-2">
-              <div className="form-check form-switch">
-                <input
-                className="form-check-input"
-                name="randomize_mode"
-                type="checkbox"
-                checked={isRandomizeMode}
-                onChange={() => setRandomizeMode(!(isRandomizeMode))}
-                />
-              </div>
-            </Col>
-            <Form.Label column sm="auto">
-              Randomize Mode?
-            </Form.Label>
-          </Form.Group>
+          <CustomFormSwitch className="mb-3" checked={isRandomizeMode} onChange={() => setRandomizeMode(!(isRandomizeMode))}>
+            Randomize Mode?
+          </CustomFormSwitch>
 
-          <Form.Group as={Row} className="mb-3" controlId="random_heroes">
-            <Col sm="auto" className="pt-2">
-              <div className="form-check form-switch">
-                <input
-                  className="form-check-input"
-                  name="randomize_heroes"
-                 type="checkbox"
-                 checked={isRandomizeHeroes}
-                 onChange={() => setRandomizeHeroes(!(isRandomizeHeroes))}
-                />
-              </div>
-            </Col>
-            <Form.Label column sm="auto">
-              Randomize Heroes?
-            </Form.Label>
-          </Form.Group>
+          <CustomFormSwitch className="mb-3" checked={isRandomizeHeroes} onChange={() => setRandomizeHeroes(!(isRandomizeHeroes))}>
+            Randomize Heroes?
+          </CustomFormSwitch>
 
-          <Form.Group as={Row} className="mb-3" controlId="random_towers">
-            <Col sm="auto" className="pt-2">
-              <div className="form-check form-switch">
-                <input
-                  className="form-check-input"
-                  name="randomize_towers"
-                 type="checkbox"
-                 checked={isRandomizeTowers}
-                 onChange={() => setRandomizeTowers(!(isRandomizeTowers))}
-                />
-              </div>
-            </Col>
-            <Form.Label column sm="auto">
+          <Form.Group as={Row} className="mb-3">
+            <CustomFormSwitch checked={isRandomizeTowers} onChange={() => setRandomizeTowers(!(isRandomizeTowers))}>
               Randomize Towers?
-            </Form.Label>
+            </CustomFormSwitch>
             <Form.Text muted className="text-start ms-5">
               This option prevents <strong>X Monkeys Only</strong> modes from being picked.
             </Form.Text>
-            <Form.Group as={Row} className="ms-5" controlId="tower_type_restriction">
-              <Col sm="auto" className="pt-2">
-                <div className="form-check form-switch">
-                  <input
-                    disabled={!(isRandomizeTowers)}
-                    className="form-check-input"
-                    name="restrict_tower_type"
-                    type="checkbox"
-                    checked={isRestrictTowerType}
-                    onChange={() => setRestrictTowerType(!(isRestrictTowerType))}
-                  />
-                </div>
-              </Col>
-              <Form.Label column sm="auto">
-                Restrict each player to one tower type?
-              </Form.Label>
-            </Form.Group>
+            <CustomFormSwitch className="ms-5" checked={isRestrictTowerType} onChange={() => setRestrictTowerType(!(isRestrictTowerType))} disabled={!(isRandomizeTowers)}>
+              Restrict each player to one tower type?
+            </CustomFormSwitch>
             <Form.Group as={Row} className="ms-5 mb-3" controlId="tower_count">
               <Form.Label column sm="auto">
                 Maximum tower options per player:
