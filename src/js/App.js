@@ -9,19 +9,19 @@ import Randomizer from './components/Randomizer';
 
 
 function App() {
-  return (
-    <div className="App background">
-      <div className="Title">
-        <Title />
-      </div>
-      <Randomizer />
-      <footer>
-        <div className="Version">
-          <Version />
+    return (
+        <div className="App background">
+            <div className="Title">
+                <Title />
+            </div>
+            <Randomizer />
+            <footer>
+                <div className="Version">
+                    <Version />
+                </div>
+            </footer>
         </div>
-      </footer>
-    </div>
-  );
+    );
 }
 
 
