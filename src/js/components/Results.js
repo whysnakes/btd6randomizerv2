@@ -6,11 +6,11 @@ import BlackBorder from './BlackBorder';
 
 function Results() {
     return (
-      <BlackBorder>
-        <TextBTD6Font tag={"h2"} className="text-center">
-          Results
-        </TextBTD6Font>
-      </BlackBorder>
+        <BlackBorder>
+            <TextBTD6Font tag={"h2"} className="text-center">
+                Results
+            </TextBTD6Font>
+        </BlackBorder>
     );
   }
 
