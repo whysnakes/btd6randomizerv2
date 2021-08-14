@@ -6,27 +6,30 @@ function getRandomInt(min, max) {
 }
 
 //Fisher-Yates algorithm shuffle function taken from SO
-function shuffle(array) {
-    let counter = array.length;
+function shuffle(array, end) {
+    if (!end) {
+        end = array.length - 1;
+    }
+    let counter = 0;
 
-    // While there are elements in the array
-    while (counter > 0) {
-        // Pick a random index
-        let index = Math.floor(Math.random() * counter);
+    // While not yet swapped the required number of elements.
+    while (counter < end) {
+        // Pick a random index.
+        let index = getRandomInt(counter, array.length);
 
-        // Decrease counter by 1
-        counter--;
-
-        // And swap the last element with it
+        // Swap the first element with it.
         let temp = array[counter];
         array[counter] = array[index];
         array[index] = temp;
+
+        // And increase counter by 1.
+        counter++;
     }
     return array;
 }
 
 function getRandomArrayItem(array) {
-    return array[getRandomInt(0, array.length - 1)];
+    return array[getRandomInt(0, array.length)];
 }
 
 function getRandomObjectKey(object) {
