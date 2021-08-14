@@ -1,5 +1,3 @@
-import React from 'react';
-
 import * as BTD6Data from './btd6info';
 import * as random from './random';
 
@@ -25,7 +23,7 @@ function getRandomHero() {
 
 function getRandomTowers(noOfTowers, towerType) {
     let towerArray = [];
-    let randomTowers = [];
+
     if(!towerType) {
         for(var key in BTD6Data.btd6_towers) {
             for(var tower in BTD6Data.btd6_towers[key]) {
@@ -38,12 +36,8 @@ function getRandomTowers(noOfTowers, towerType) {
             towerArray.push(BTD6Data.btd6_towers[towerType][tower]);
         }
     }
-    for(let i = 0; i < noOfTowers; i++) {
-        let towerInt = random.getRandomInt(0, towerArray.length - 1);
-        randomTowers.push(towerArray[towerInt]);
-        towerArray.splice(towerInt,1);
-    }
-    return randomTowers;
+
+    return random.shuffle(towerArray, noOfTowers).slice(0, noOfTowers);
 }
 
 
