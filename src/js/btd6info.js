@@ -289,6 +289,8 @@ export {
     btd6_version,
     randomizer_version,
     btd6_maps,
+    btd6_heroes,
+    btd6_modes,
     btd6_only_modes,
     btd6_towers,
     btd6_maps_object,
