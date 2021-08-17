@@ -2,9 +2,9 @@
 
 Welcome to a Bloons Tower Defense 6 game randomizer!
 
-If you haven't figured out where the randomizer is yet, [click here](https://maquarocket.github.io/btd6randomizer/ "whysnakes and maquarocket present ACBR: A C*** BTD6 Randomizer")!
+If you haven't figured out where the randomizer is yet, [click here](https://whysnakes.github.io/btd6randomizerv2/ "whysnakes and maquarocket present ACBR: A C*** BTD6 Randomizer")!
 
-For those who are interested, the changelog can be found [here](./CHANGELOG.md)
+For those who are interested, the changelog can be found [here](./CHANGELOG.md).
 ## The Application
 
 ![Image of the Bloons Tower Defense 6 Randomizer with generated results for 2 players, a random map, game mode and heroes and 2 towers for each player](./docs/app_screenshot.png?raw=true "App Screenshot")
@@ -27,7 +27,7 @@ The **_randomize map_** option will randomly select a map from the standard 56 m
 
 ### Heroes Randomizer
 
-The **_randomize heroes_** option will randomly select 1 hero for each player. The random assignment does not repeat heroes for different players. Thus if randomizing for 4 players, all the 4 selected heroes will be different.
+The **_randomize heroes_** option will randomly select 1 hero for each player. The random assignment can repeat heroes for different players. Thus, it is possible for multiple players to get the same hero.
 
 ### Game Mode Randomizer
 
