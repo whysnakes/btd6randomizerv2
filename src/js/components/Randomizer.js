@@ -4,6 +4,9 @@ import { Container, Row, Col, Form } from 'react-bootstrap';
 import CustomFormSwitch from './CustomFormSwitch';
 import OptionsFormContainer from './OptionsFormContainer';
 import Results from './Results';
+import * as randomizer from '../btd6randomizer';
+import { btd6_towers_object } from '../btd6info';
+import { shuffle } from '../random';
 
 
 function Randomizer() {
@@ -15,9 +18,50 @@ function Randomizer() {
     const [isRestrictTowerType, setRestrictTowerType] = useState(false);
     const [maxTowers, setMaxTowers] = useState(1);
 
+    const [randomMap, setRandomMap] = useState("");
+    const [randomMode, setRandomMode] = useState("");
+    const [randomHeroes, setRandomHeroes] = useState([]);
+    const [randomTowers, setRandomTowers] = useState([]);
+
     function generateRandomOptions(e) {
-        e.preventDefault();
-        console.log("Form submitted.");
+        e.preventDefault();  // Prevents the default behaviour of refreshing a page when submitting a form.
+
+        // Reset all values to empty first.
+        setRandomMap("");
+        setRandomMode("");
+        setRandomHeroes([]);
+        setRandomTowers([]);
+
+        if (isRandomizeMap) {
+            setRandomMap(randomizer.getRandomMap());
+        }
+        if (isRandomizeMode) {
+            setRandomMode(randomizer.getRandomMode());
+        }
+        if (isRandomizeHeroes) {
+            const heroes_list = [];
+            for (let i = 0; i < playerCount; i++) {
+                heroes_list.push(randomizer.getRandomHero());
+            }
+            setRandomHeroes(heroes_list);
+        }
+        if (isRandomizeTowers) {
+            let playerTowers = [];
+            if(isRestrictTowerType) {
+                let modes = Object.keys(btd6_towers_object);
+                modes = shuffle(modes);
+                for(let i = 0; i < playerCount; i++) {
+                    let randomTowersByType = randomizer.getRandomTowers(maxTowers, modes[i]);
+                    for(let j = 0; j < randomTowersByType.length; j++) {
+                        playerTowers.push(randomTowersByType[j]);
+                    }
+                }
+            }
+            else {
+                playerTowers = randomizer.getRandomTowers(maxTowers * playerCount);
+            }
+            setRandomTowers(playerTowers);
+        }
     }
 
     return (
@@ -78,8 +122,13 @@ function Randomizer() {
                 </Col>
 
                 <Col>
-                    <div className="Results">
-                        <Results />
+                    <div id="ResultsDiv" className="Results">
+                        <Results
+                            randomMap={randomMap}
+                            randomMode={randomMode}
+                            randomHeroes={randomHeroes}
+                            randomTowers={randomTowers}
+                        />
                     </div>
                 </Col>
             </Row>
