@@ -1,5 +1,6 @@
 /**
  * Uses Math.random() to generate a randomized integer from within the specified minimum and maximum. Taken from MDN.
+ * 
  * @param  {Number} min - Minimum integer value, inclusive
  * @param  {Number} max - Maximum integer value, exclusive
  * @return {Number}     - A randomized integer
@@ -12,7 +13,8 @@ function getRandomInt(min, max) {
 
 /**
  * Uses Fisher-Yates algorithm to shuffle an array (prevent bias with Math.random()). Taken from SO
- * @param  {Array} array    - Array to shuffle
+ * 
+ * @param  {Array}  array   - Array to shuffle
  * @param  {Number} [end]   - Last index in array to shuffle for partial shuffles
  * @return {Array}          - Shuffled array
  */
