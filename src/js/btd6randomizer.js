@@ -25,14 +25,14 @@ function getRandomTowers(noOfTowers, towerType) {
     let towerArray = [];
 
     if(!towerType) {
-        for(var key in BTD6Data.btd6_towers) {
-            for(var tower in BTD6Data.btd6_towers[key]) {
+        for(let key in BTD6Data.btd6_towers) {
+            for(let tower in BTD6Data.btd6_towers[key]) {
                 towerArray.push(BTD6Data.btd6_towers[key][tower]);
             }
         }
     }
     else {
-        for(var tower in BTD6Data.btd6_towers[towerType]) {
+        for(let tower in BTD6Data.btd6_towers[towerType]) {
             towerArray.push(BTD6Data.btd6_towers[towerType][tower]);
         }
     }
