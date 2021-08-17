@@ -15,9 +15,10 @@ function getRandomMap() {
 
 /**
  * Returns a random BTD6 game mode.
+ * Will not return "X Monkeys Only" game modes if tower type restrictions are enabled.
  * 
- * @param  None
- * @return {String}     - Name of a random game mode.
+ * @param  {Boolean} [isTowerTypeRestricted]    - Flag indicating if tower type restrictions are enabled.
+ * @return {String}                             - Name of a random game mode.
  */
 function getRandomMode(isTowerTypeRestricted) {
     let modeArray = [];
