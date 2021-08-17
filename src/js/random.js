@@ -18,6 +18,7 @@ function getRandomInt(min, max) {
  * @return {Array}          - Shuffled array
  */
 function shuffle(array, end) {
+    let shuffle_array = [...array];
     if (!end) {
         end = array.length - 1;
     }
@@ -26,17 +27,17 @@ function shuffle(array, end) {
     // While not yet swapped the required number of elements.
     while (counter < end) {
         // Pick a random index.
-        let index = getRandomInt(counter, array.length);
+        let index = getRandomInt(counter, shuffle_array.length);
 
         // Swap the first element with it.
-        let temp = array[counter];
-        array[counter] = array[index];
-        array[index] = temp;
+        let temp = shuffle_array[counter];
+        shuffle_array[counter] = shuffle_array[index];
+        shuffle_array[index] = temp;
 
         // And increase counter by 1.
         counter++;
     }
-    return array;
+    return shuffle_array;
 }
 
 function getRandomArrayItem(array) {
