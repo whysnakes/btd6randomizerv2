@@ -36,7 +36,7 @@ function Randomizer() {
             setRandomMap(randomizer.getRandomMap());
         }
         if (isRandomizeMode) {
-            setRandomMode(randomizer.getRandomMode());
+            setRandomMode(randomizer.getRandomMode(isRestrictTowerType));
         }
         if (isRandomizeHeroes) {
             const heroes_list = [];
