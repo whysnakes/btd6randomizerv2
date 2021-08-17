@@ -15,15 +15,15 @@ function getRandomMap() {
 
 /**
  * Returns a random BTD6 game mode.
- * Will not return "X Monkeys Only" game modes if tower type restrictions are enabled.
+ * Will not return "X Monkeys Only" game modes if towers are randomized.
  * 
- * @param  {Boolean} [isTowerTypeRestricted]    - Flag indicating if tower type restrictions are enabled.
+ * @param  {Boolean} [isTowersRandomized]    - Flag indicating if towers are randomized
  * @return {String}                             - Name of a random game mode.
  */
-function getRandomMode(isTowerTypeRestricted) {
+function getRandomMode(isTowersRandomized) {
     let modeArray = [];
     for(var i = 0; i < BTD6Data.btd6_modes.length; i++) {
-        if (!isTowerTypeRestricted || !BTD6Data.btd6_only_modes.includes(i)) {
+        if (!isTowersRandomized || !BTD6Data.btd6_only_modes.includes(i)) {
             modeArray.push(BTD6Data.btd6_modes[i]);
         }
     }
