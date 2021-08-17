@@ -1,7 +1,7 @@
 const btd6_version = "27.1.4229"
 const randomizer_version = "1.0.0"
 
-let btd6_maps = [
+const btd6_maps = [
     "Monkey Meadow (Beginner)",
     "Tree Stump (Beginner)",
     "Town Center (Beginner)",
@@ -60,7 +60,7 @@ let btd6_maps = [
     "#Ouch (Expert)",
 ];
 
-let btd6_heroes = [
+const btd6_heroes = [
     "Quincy",
     "Gwendolin",
     "Striker Jones",
@@ -76,7 +76,7 @@ let btd6_heroes = [
     "Psi",
 ];
 
-let btd6_modes = [
+const btd6_modes = [
     "Standard Easy",
     "Primary Monkeys Only (Easy)",
     "Deflation (Easy)",
@@ -94,11 +94,11 @@ let btd6_modes = [
 ];
 
 //Indices of modes to blacklist when randomizing towers in btd6_modes
-let btd6_only_modes = [
+const btd6_only_modes = [
     1,4,8
 ]
 
-let btd6_towers = {
+const btd6_towers = {
     primary: ["Dart Monkey","Boomerang Monkey","Bomb Shooter","Tack Shooter","Ice Monkey","Glue Gunner"],
     military: ["Sniper Monkey","Monkey Sub","Monkey Buccaneer","Monkey Ace","Heli Pilot","Mortar Monkey","Dartling Gunner"],
     magic: ["Wizard Monkey", "Super Monkey","Ninja Monkey","Alchemist","Druid"],
@@ -111,7 +111,7 @@ let btd6_towers = {
  * Object structure to contain the images.
  * Can be used in the future to implement the images onto the website.
  */
-let btd6_maps_object = {
+const btd6_maps_object = {
     "Monkey Meadow (Beginner)": "../static/btd6 maps png/MonkeyMeadow_no_UI.png",
     "Tree Stump (Beginner)": "../static/btd6 maps png/TreeStump_No_UI.png",
     "Town Center (Beginner)": "../static/btd6 maps png/TownCenter_No_UI.png",
@@ -170,7 +170,7 @@ let btd6_maps_object = {
     "#Ouch (Expert)": "../static/btd6 maps png/Ouch_No_UI.png"
 };
 
-let btd6_maps_by_difficulty_object = {
+const btd6_maps_by_difficulty_object = {
     Beginner: {
     "Monkey Meadow": "../static/btd6 maps png/MonkeyMeadow_no_UI.png",
     "Tree Stump": "../static/btd6 maps png/TreeStump_No_UI.png",
@@ -236,7 +236,7 @@ let btd6_maps_by_difficulty_object = {
     }
 };
 
-let btd6_heroes_object = {
+const btd6_heroes_object = {
     "Quincy": "../static/btd6 heroes png/QuincyPortrait.png",
     "Gwendolin": "../static/btd6 heroes png/GwendolinPortrait.png",
     "Striker Jones": "../static/btd6 heroes png/Striker_Jones.png",
@@ -252,7 +252,7 @@ let btd6_heroes_object = {
     "Psi": "../static/btd6 heroes png/PsiPortrait.png",
 };
 
-let btd6_towers_object = {
+const btd6_towers_object = {
     primary: {
         "Dart Monkey": "../static/btd6 towers png/100-DartMonkey.png",
         "Boomerang Monkey": "../static/btd6 towers png/BTD6_Boomerang_Monkey.png",
