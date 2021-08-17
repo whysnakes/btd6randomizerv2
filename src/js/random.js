@@ -1,4 +1,3 @@
-
 /**
  * Uses Math.random() to generate a randomized integer from within the specified minimum and maximum. Taken from MDN.
  * @param  {Number} min - Minimum integer value, inclusive
@@ -40,10 +39,22 @@ function shuffle(array, end) {
     return shuffle_array;
 }
 
+/**
+ * Randomly selects 1 item from an array.
+ * 
+ * @param  {any[]} array - The array from which a random element is to be selected from.
+ * @return {any}         - A random item from the array.
+ */
 function getRandomArrayItem(array) {
     return array[getRandomInt(0, array.length)];
 }
 
+/**
+ * Randomly selects 1 property from an Object.
+ * 
+ * @param  {Object} object - The object from which a random property is to be selected from.
+ * @return                 - A random property from the object.
+ */
 function getRandomObjectKey(object) {
     const keys = Object.keys(object);
     return getRandomArrayItem(keys);
