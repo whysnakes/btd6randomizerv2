@@ -17,8 +17,8 @@ function getRandomMap() {
  * Returns a random BTD6 game mode.
  * Will not return "X Monkeys Only" game modes if towers are randomized.
  * 
- * @param  {Boolean} [isTowersRandomized]    - Flag indicating if towers are randomized
- * @return {String}                             - Name of a random game mode.
+ * @param  {Boolean} [isTowersRandomized]   - Flag indicating if towers are randomized
+ * @return {String}                         - Name of a random game mode.
  */
 function getRandomMode(isTowersRandomized) {
     let modeArray = [];
