@@ -16,7 +16,7 @@ const PlayerField = (props) => {
     return (
         <ResultsCard title={"Player ".concat(props.playerNo)}>
             <ul className="list-group list-group flush">
-                {props.hero.length > 0 && <TextBTD6Font tag={"li"} className="list-group-item">Hero: {props.hero}</TextBTD6Font>}
+                {props.hero && <TextBTD6Font tag={"li"} className="list-group-item">Hero: {props.hero}</TextBTD6Font>}
                 {props.towers.length > 0 && towers}
             </ul>
         </ResultsCard>

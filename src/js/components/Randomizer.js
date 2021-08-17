@@ -18,6 +18,7 @@ function Randomizer() {
     const [isRestrictTowerType, setRestrictTowerType] = useState(false);
     const [maxTowers, setMaxTowers] = useState(1);
 
+    const [final_playerCount, setFinal_playerCount] = useState(playerCount);
     const [randomMap, setRandomMap] = useState("");
     const [randomMode, setRandomMode] = useState("");
     const [randomHeroes, setRandomHeroes] = useState([]);
@@ -31,6 +32,8 @@ function Randomizer() {
         setRandomMode("");
         setRandomHeroes([]);
         setRandomTowers([]);
+
+        setFinal_playerCount(playerCount);
 
         if (isRandomizeMap) {
             setRandomMap(randomizer.getRandomMap());
@@ -124,6 +127,7 @@ function Randomizer() {
                 <Col>
                     <div id="ResultsDiv" className="Results">
                         <Results
+                            playerCount={final_playerCount}
                             randomMap={randomMap}
                             randomMode={randomMode}
                             randomHeroes={randomHeroes}
