@@ -1,11 +1,22 @@
-//taken from MDN
+
+/**
+ * Uses Math.random() to generate a randomized integer from within the specified minimum and maximum. Taken from MDN.
+ * @param  {Number} min - Minimum integer value, inclusive
+ * @param  {Number} max - Maximum integer value, exclusive
+ * @return {Number}     - A randomized integer
+ */
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
-//Fisher-Yates algorithm shuffle function taken from SO
+/**
+ * Uses Fisher-Yates algorithm to shuffle an array (prevent bias with Math.random()). Taken from SO
+ * @param  {Array} array    - Array to shuffle
+ * @param  {Number} [end]   - Last index in array to shuffle for partial shuffles
+ * @return {Array}          - Shuffled array
+ */
 function shuffle(array, end) {
     if (!end) {
         end = array.length - 1;
@@ -36,7 +47,6 @@ function getRandomObjectKey(object) {
     const keys = Object.keys(object);
     return getRandomArrayItem(keys);
 }
-
 
 export {
     getRandomInt,
