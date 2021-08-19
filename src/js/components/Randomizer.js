@@ -78,7 +78,20 @@ function Randomizer() {
                                     Number of players:
                                 </Form.Label>
                                 <Col sm="auto">
-                                    <Form.Control type="number" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)} />
+                                    <Form.Control
+                                        type="range"
+                                        min="1"
+                                        max="4"
+                                        value={playerCount}
+                                        onChange={({target:{value}}) => setPlayerCount(value)}
+                                    />
+                                </Col>
+                                <Col xs="auto">
+                                    <Form.Control
+                                        type="number"
+                                        value={playerCount}
+                                        readOnly
+                                    />
                                 </Col>
                             </Form.Group>
 
@@ -110,12 +123,19 @@ function Randomizer() {
                                     </Form.Label>
                                     <Col sm="auto">
                                         <Form.Control
-                                            type="number"
+                                            type="range"
                                             min="1"
                                             max="4"
                                             disabled={!(isRandomizeTowers)}
                                             value={maxTowers}
                                             onChange={({target:{value}}) => setMaxTowers(value)}
+                                        />
+                                    </Col>
+                                    <Col xs="auto">
+                                        <Form.Control
+                                            type="number"
+                                            value={maxTowers}
+                                            readOnly
                                         />
                                     </Col>
                                 </Form.Group>
