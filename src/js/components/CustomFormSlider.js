@@ -8,7 +8,7 @@ function CustomFormSlider(props) {
             <Form.Label column sm="auto">
                 {props.children}
             </Form.Label>
-            <Col sm="auto">
+            <Col sm="auto" className="my-auto">
                 <Form.Control
                     type="range"
                     min={props.min}
