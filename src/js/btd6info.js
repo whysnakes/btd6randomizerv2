@@ -24,13 +24,6 @@ const btd6_only_modes = [
     1,4,8
 ]
 
-const btd6_towers = {
-    primary: ["Dart Monkey","Boomerang Monkey","Bomb Shooter","Tack Shooter","Ice Monkey","Glue Gunner"],
-    military: ["Sniper Monkey","Monkey Sub","Monkey Buccaneer","Monkey Ace","Heli Pilot","Mortar Monkey","Dartling Gunner"],
-    magic: ["Wizard Monkey", "Super Monkey","Ninja Monkey","Alchemist","Druid"],
-    support: ["Banana Farm","Spike Factory","Monkey Village","Engineer Monkey"]
-};
-
 
 
 /*
@@ -216,7 +209,6 @@ export {
     randomizer_version,
     btd6_modes,
     btd6_only_modes,
-    btd6_towers,
     btd6_maps_object,
     btd6_maps_by_difficulty_object,
     btd6_heroes_object,

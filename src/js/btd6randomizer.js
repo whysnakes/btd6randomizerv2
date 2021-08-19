@@ -48,19 +48,19 @@ function getRandomHero() {
  * @return {String[]}               - Array of tower names.
  */
 function getRandomTowers(noOfTowers, towerType) {
-    let towerArray = [];
-    let validTowerTypes = Object.keys(BTD6Data.btd6_towers)
+    const towerArray = [];
+    const validTowerTypes = Object.keys(BTD6Data.btd6_towers_object)
 
-    if(!towerType || !validTowerTypes.includes(towerType)) {
-        for(let key in BTD6Data.btd6_towers) {
-            for(let tower in BTD6Data.btd6_towers[key]) {
-                towerArray.push(BTD6Data.btd6_towers[key][tower]);
+    if (!towerType || !validTowerTypes.includes(towerType)) {
+        for (const key of validTowerTypes) {
+            for (const tower in BTD6Data.btd6_towers_object[key]) {
+                towerArray.push(tower);
             }
         }
     }
     else {
-        for(let tower in BTD6Data.btd6_towers[towerType]) {
-            towerArray.push(BTD6Data.btd6_towers[towerType][tower]);
+        for (const tower in BTD6Data.btd6_towers_object[towerType]) {
+            towerArray.push(tower);
         }
     }
 
