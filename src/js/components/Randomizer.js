@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 
 import CustomFormSwitch from './CustomFormSwitch';
+import CustomFormSlider from './CustomFormSlider';
 import OptionsFormContainer from './OptionsFormContainer';
 import Results from './Results';
 import * as randomizer from '../btd6randomizer';
@@ -73,27 +74,10 @@ function Randomizer() {
                 <Col>
                     <div className="Options">
                         <OptionsFormContainer onSubmit={generateRandomOptions}>
-                            <Form.Group as={Row} className="mb-3" controlId="player_count">
-                                <Form.Label column sm="auto">
-                                    Number of players:
-                                </Form.Label>
-                                <Col sm="auto">
-                                    <Form.Control
-                                        type="range"
-                                        min="1"
-                                        max="4"
-                                        value={playerCount}
-                                        onChange={({target:{value}}) => setPlayerCount(value)}
-                                    />
-                                </Col>
-                                <Col xs="auto">
-                                    <Form.Control
-                                        type="number"
-                                        value={playerCount}
-                                        readOnly
-                                    />
-                                </Col>
-                            </Form.Group>
+
+                            <CustomFormSlider className="mb-3" controlId="player_count" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)}>
+                                Number of players:
+                            </CustomFormSlider>
 
                             <CustomFormSwitch className="mb-3" checked={isRandomizeMap} onChange={() => setRandomizeMap(!(isRandomizeMap))}>
                                 Randomize Map?
@@ -117,29 +101,11 @@ function Randomizer() {
                                 <CustomFormSwitch className="ms-5" checked={isRestrictTowerType} onChange={() => setRestrictTowerType(!(isRestrictTowerType))} disabled={!(isRandomizeTowers)}>
                                     Restrict each player to one tower type?
                                 </CustomFormSwitch>
-                                <Form.Group as={Row} className="ms-5 mb-3" controlId="tower_count">
-                                    <Form.Label column sm="auto">
-                                        Maximum tower options per player:
-                                    </Form.Label>
-                                    <Col sm="auto">
-                                        <Form.Control
-                                            type="range"
-                                            min="1"
-                                            max="4"
-                                            disabled={!(isRandomizeTowers)}
-                                            value={maxTowers}
-                                            onChange={({target:{value}}) => setMaxTowers(value)}
-                                        />
-                                    </Col>
-                                    <Col xs="auto">
-                                        <Form.Control
-                                            type="number"
-                                            value={maxTowers}
-                                            readOnly
-                                        />
-                                    </Col>
-                                </Form.Group>
+                                <CustomFormSlider className="ms-5 mb-3" controlId="tower_count" min="1" max="4" disabled={!(isRandomizeTowers)} value={maxTowers} onChange={({target:{value}}) => setMaxTowers(value)}>
+                                    Maximum tower options per player:
+                                </CustomFormSlider>
                             </Form.Group>
+
                         </OptionsFormContainer>
                     </div>
                 </Col>
