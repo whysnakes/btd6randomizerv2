@@ -9,8 +9,8 @@ import * as random from './random';
  * @return {String} - Name of a random map.
  */
 function getRandomMap() {
-    const difficulty = random.getRandomObjectKey(BTD6Data.btd6_maps_by_difficulty_object);
-    return random.getRandomObjectKey(BTD6Data.btd6_maps_by_difficulty_object[difficulty]);
+    const difficulty = random.getRandomObjectKey(BTD6Data.btd6_maps);
+    return random.getRandomObjectKey(BTD6Data.btd6_maps[difficulty]);
 }
 
 /**
@@ -22,9 +22,9 @@ function getRandomMap() {
  */
 function getRandomMode(isTowersRandomized) {
     let modeArray = [];
-    for(var i = 0; i < BTD6Data.btd6_modes.length; i++) {
+    for(var i = 0; i < BTD6Data.btd6_modes_array.length; i++) {
         if (!isTowersRandomized || !BTD6Data.btd6_only_modes.includes(i)) {
-            modeArray.push(BTD6Data.btd6_modes[i]);
+            modeArray.push(BTD6Data.btd6_modes_array[i]);
         }
     }
     return random.getRandomArrayItem(modeArray);
@@ -37,7 +37,7 @@ function getRandomMode(isTowersRandomized) {
  * @return {String} - Name of a random hero.
  */
 function getRandomHero() {
-    return random.getRandomObjectKey(BTD6Data.btd6_heroes_object);
+    return random.getRandomObjectKey(BTD6Data.btd6_heroes);
 }
 
 /**
@@ -49,17 +49,17 @@ function getRandomHero() {
  */
 function getRandomTowers(noOfTowers, towerType) {
     const towerArray = [];
-    const validTowerTypes = Object.keys(BTD6Data.btd6_towers_object)
+    const validTowerTypes = Object.keys(BTD6Data.btd6_towers)
 
     if (!towerType || !validTowerTypes.includes(towerType)) {
         for (const key of validTowerTypes) {
-            for (const tower in BTD6Data.btd6_towers_object[key]) {
+            for (const tower in BTD6Data.btd6_towers[key]) {
                 towerArray.push(tower);
             }
         }
     }
     else {
-        for (const tower in BTD6Data.btd6_towers_object[towerType]) {
+        for (const tower in BTD6Data.btd6_towers[towerType]) {
             towerArray.push(tower);
         }
     }

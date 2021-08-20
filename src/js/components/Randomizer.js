@@ -5,7 +5,7 @@ import CustomFormSwitch from './CustomFormSwitch';
 import OptionsFormContainer from './OptionsFormContainer';
 import Results from './Results';
 import * as randomizer from '../btd6randomizer';
-import { btd6_towers_object } from '../btd6info';
+import { btd6_towers } from '../btd6info';
 import { shuffle } from '../random';
 
 
@@ -51,7 +51,7 @@ function Randomizer() {
         if (isRandomizeTowers) {
             let playerTowers = [];
             if(isRestrictTowerType) {
-                let modes = Object.keys(btd6_towers_object);
+                let modes = Object.keys(btd6_towers);
                 modes = shuffle(modes);
                 for(let i = 0; i < playerCount; i++) {
                     let randomTowersByType = randomizer.getRandomTowers(maxTowers, modes[i]);
