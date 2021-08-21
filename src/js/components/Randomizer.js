@@ -78,7 +78,7 @@ function Randomizer() {
                                     Number of players:
                                 </Form.Label>
                                 <Col sm="auto">
-                                    <Form.Control type="number" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)} />
+                                    <Form.Control type="number" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(Number(value))} />
                                 </Col>
                             </Form.Group>
 
@@ -115,7 +115,7 @@ function Randomizer() {
                                             max="4"
                                             disabled={!(isRandomizeTowers)}
                                             value={maxTowers}
-                                            onChange={({target:{value}}) => setMaxTowers(value)}
+                                            onChange={({target:{value}}) => setMaxTowers(Number(value))}
                                         />
                                     </Col>
                                 </Form.Group>
