@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import TextBTD6Font from './TextBTD6Font';
 import ResultsCard from './ResultsCard';
@@ -6,6 +7,11 @@ import ResultsCard from './ResultsCard';
 
 const TowerListItem = (props) => {
     return <TextBTD6Font as={"li"} className="list-group-item">Tower {props.towerNo}: {props.tower}</TextBTD6Font>;
+}
+
+TowerListItem.propTypes = {
+    towerNo: PropTypes.number.isRequired,
+    tower: PropTypes.string.isRequired
 }
 
 const PlayerField = (props) => {
@@ -21,6 +27,11 @@ const PlayerField = (props) => {
             </ul>
         </ResultsCard>
     )
+}
+
+PlayerField.propTypes = {
+    hero: PropTypes.string,
+    towers: PropTypes.arrayOf(PropTypes.string)
 }
 
 
