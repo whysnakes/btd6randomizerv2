@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import TextBTD6Font from './TextBTD6Font';
 
@@ -12,6 +13,11 @@ function ResultsCard(props) {
             {props.children}
         </div>
     )
+}
+
+ResultsCard.propTypes = {
+    title: PropTypes.string.isRequired,
+    children: PropTypes.node  // Node just specifies that the prop should be anything that can be rendered.
 }
 
 
