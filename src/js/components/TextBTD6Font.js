@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 function TextBTD6Font(props) {
@@ -11,6 +12,15 @@ function TextBTD6Font(props) {
             {props.children}
         </Tag>
     )
+}
+
+TextBTD6Font.propTypes = {
+    as: PropTypes.string,
+    className: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.node
+    ]).isRequired
 }
 
 
