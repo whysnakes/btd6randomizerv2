@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 function BlackBorder(props) {
@@ -7,6 +8,10 @@ function BlackBorder(props) {
             {props.children}
         </div>
     )
+}
+
+BlackBorder.propTypes = {
+    children: PropTypes.node
 }
 
 
