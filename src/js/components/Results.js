@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import TextBTD6Font from './TextBTD6Font';
 import BlackBorder from './BlackBorder';
@@ -45,7 +46,15 @@ function Results(props) {
 
         </BlackBorder>
     );
-  }
+}
+
+Results.propTypes = {
+    playerCount: PropTypes.number.isRequired,
+    randomMap: PropTypes.string,
+    randomMode: PropTypes.string,
+    randomHeroes: PropTypes.arrayOf(PropTypes.string),
+    randomTowers: PropTypes.arrayOf(PropTypes.string)
+}
 
 
   export default Results;

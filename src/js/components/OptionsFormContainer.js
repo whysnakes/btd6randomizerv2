@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Form, Button } from 'react-bootstrap';
 
 import TextBTD6Font from './TextBTD6Font';
@@ -19,6 +20,11 @@ function OptionsFormContainer(props) {
             </Form>
         </BlackBorder>
     );
+}
+
+OptionsFormContainer.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    children: PropTypes.node
 }
 
 
