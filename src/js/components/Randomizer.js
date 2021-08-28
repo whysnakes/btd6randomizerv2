@@ -18,6 +18,8 @@ function Randomizer() {
     const [isRestrictTowerType, setRestrictTowerType] = useState(false);
     const [maxTowers, setMaxTowers] = useState(1);
 
+    const [playerNames, setPlayerNames] = useState(["", "", "", ""]);
+
     const [final_playerCount, setFinal_playerCount] = useState(playerCount);
     const [randomMap, setRandomMap] = useState("");
     const [randomMode, setRandomMode] = useState("");
