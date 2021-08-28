@@ -7,6 +7,7 @@ import Results from './Results';
 import * as randomizer from '../btd6randomizer';
 import { btd6_towers } from '../btd6info';
 import { shuffle } from '../random';
+import PlayerNameInput from './PlayerNameInput';
 
 
 function Randomizer() {
@@ -69,6 +70,20 @@ function Randomizer() {
         }
     }
 
+    function player_name_inputs(count) {
+        function setName(name, index) {
+            const names = [...playerNames];
+            names[index] = name;
+            setPlayerNames(names);
+        }
+
+        const inputs = [];
+        for (let i = 0; i < count; i++) {
+            inputs.push(<PlayerNameInput key={i} i={i + 1} value={playerNames[i]} onChange={({target: {value}}) => {setName(value, i)}} />);
+        }
+        return inputs;
+    }
+
     return (
         <Container>
             <Row>
@@ -92,7 +107,7 @@ function Randomizer() {
                                     </Card.Header>
                                     <Accordion.Collapse eventKey="0">
                                         <Card.Body>
-                                            Hello World!
+                                            {player_name_inputs(playerCount)}
                                         </Card.Body>
                                     </Accordion.Collapse>
                                 </Card>
