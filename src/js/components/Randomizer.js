@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form } from 'react-bootstrap';
+import { Container, Row, Col, Form, Accordion, Card, FormGroup } from 'react-bootstrap';
 
 import CustomFormSwitch from './CustomFormSwitch';
 import OptionsFormContainer from './OptionsFormContainer';
@@ -75,14 +75,28 @@ function Randomizer() {
                 <Col>
                     <div className="Options">
                         <OptionsFormContainer onSubmit={generateRandomOptions}>
-                            <Form.Group as={Row} className="mb-3" controlId="player_count">
-                                <Form.Label column sm="auto">
-                                    Number of players:
-                                </Form.Label>
-                                <Col sm="auto">
-                                    <Form.Control type="number" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)} />
-                                </Col>
-                            </Form.Group>
+                            <Accordion>
+                                <Card>
+                                    <Card.Header as={FormGroup, Row}>
+                                        <Form.Label column sm="auto">
+                                            Number of players:
+                                        </Form.Label>
+                                        <Col sm="auto">
+                                            <Form.Control type="number" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)} />
+                                        </Col>
+                                        <Col>
+                                            <Accordion.Toggle eventKey="0">
+                                                Expand
+                                            </Accordion.Toggle>
+                                        </Col>
+                                    </Card.Header>
+                                    <Accordion.Collapse eventKey="0">
+                                        <Card.Body>
+                                            Hello World!
+                                        </Card.Body>
+                                    </Accordion.Collapse>
+                                </Card>
+                            </Accordion>
 
                             <CustomFormSwitch className="mb-3" checked={isRandomizeMap} onChange={() => setRandomizeMap(!(isRandomizeMap))}>
                                 Randomize Map?
