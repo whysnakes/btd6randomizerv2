@@ -13,8 +13,9 @@ const PlayerField = (props) => {
     for (let i = 1; i <= props.towers.length; i++) {
         towers.push(<TowerListItem towerNo={i} tower={props.towers[i-1]} />);
     }
+    const title = props.playerName.length > 0 ? props.playerName : "Player ".concat(props.playerNo);
     return (
-        <ResultsCard title={"Player ".concat(props.playerNo)}>
+        <ResultsCard title={title}>
             <ul className="list-group list-group flush">
                 {props.hero && <TextBTD6Font as={"li"} className="list-group-item">Hero: {props.hero}</TextBTD6Font>}
                 {props.towers.length > 0 && towers}

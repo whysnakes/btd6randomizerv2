@@ -18,7 +18,6 @@ function Randomizer() {
     const [isRandomizeTowers, setRandomizeTowers] = useState(false);
     const [isRestrictTowerType, setRestrictTowerType] = useState(false);
     const [maxTowers, setMaxTowers] = useState(1);
-
     const [playerNames, setPlayerNames] = useState(["", "", "", ""]);
 
     const [final_playerCount, setFinal_playerCount] = useState(playerCount);
@@ -26,6 +25,7 @@ function Randomizer() {
     const [randomMode, setRandomMode] = useState("");
     const [randomHeroes, setRandomHeroes] = useState([]);
     const [randomTowers, setRandomTowers] = useState([]);
+    const [final_playerNames, setFinal_playerNames] = useState(["", "", "", ""]);
 
     function generateRandomOptions(e) {
         e.preventDefault();  // Prevents the default behaviour of refreshing a page when submitting a form.
@@ -37,6 +37,7 @@ function Randomizer() {
         setRandomTowers([]);
 
         setFinal_playerCount(playerCount);
+        setFinal_playerNames(playerNames);
 
         if (isRandomizeMap) {
             setRandomMap(randomizer.getRandomMap());
@@ -159,6 +160,7 @@ function Randomizer() {
                     <div id="ResultsDiv" className="Results">
                         <Results
                             playerCount={final_playerCount}
+                            playerNames={final_playerNames}
                             randomMap={randomMap}
                             randomMode={randomMode}
                             randomHeroes={randomHeroes}
