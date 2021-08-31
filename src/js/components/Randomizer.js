@@ -25,7 +25,7 @@ function Randomizer() {
     const [randomMode, setRandomMode] = useState("");
     const [randomHeroes, setRandomHeroes] = useState([]);
     const [randomTowers, setRandomTowers] = useState([]);
-    const [final_playerNames, setFinal_playerNames] = useState(["", "", "", ""]);
+    const [final_playerNames, setFinal_playerNames] = useState([]);
 
     function generateRandomOptions(e) {
         e.preventDefault();  // Prevents the default behaviour of refreshing a page when submitting a form.
@@ -37,7 +37,7 @@ function Randomizer() {
         setRandomTowers([]);
 
         setFinal_playerCount(playerCount);
-        setFinal_playerNames(playerNames);
+        setFinalNames();
 
         if (isRandomizeMap) {
             setRandomMap(randomizer.getRandomMap());
@@ -85,6 +85,19 @@ function Randomizer() {
         return inputs;
     }
 
+    function setFinalNames() {
+        const final_names = [];
+        for (let i = 0; i < playerCount; i++) {
+            if (playerNames[i] === "") {
+                final_names.push("Player ".concat(i + 1));
+            }
+            else {
+                final_names.push(playerNames[i]);
+            }
+        }
+        setFinal_playerNames(final_names);
+    }
+
     return (
         <Container>
             <Row>
@@ -92,14 +105,14 @@ function Randomizer() {
                     <div className="Options">
                         <OptionsFormContainer onSubmit={generateRandomOptions}>
 
-                        <Form.Group as={Row} className="mb-3" controlId="player_count">
-                            <Form.Label column sm="auto">
-                                Number of players:
-                            </Form.Label>
-                            <Col sm="auto">
-                                <Form.Control type="number" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)} />
-                            </Col>
-                        </Form.Group>
+                            <Form.Group as={Row} className="mb-3" controlId="player_count">
+                                <Form.Label column sm="auto">
+                                    Number of players:
+                                </Form.Label>
+                                <Col sm="auto">
+                                    <Form.Control type="number" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)} />
+                                </Col>
+                            </Form.Group>
 
                             <div className="accordion mb-3" id="playerCount">
                                 <div className="accordion-item">
