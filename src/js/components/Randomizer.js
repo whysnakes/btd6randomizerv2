@@ -103,9 +103,11 @@ function Randomizer() {
                                         This option prevents <strong>X Monkeys Only</strong> modes from being picked.
                                     </Form.Text>
                                 </Col>
-                                <CustomFormSwitch className="col-sm-11 offset-sm-1" checked={isRestrictTowerType} onChange={() => setRestrictTowerType(!(isRestrictTowerType))} disabled={!(isRandomizeTowers)}>
-                                    Restrict each player to one tower type?
-                                </CustomFormSwitch>
+                                <Col sm={{span: 11, offset: 1}}>
+                                    <CustomFormSwitch className="col-sm-11 offset-sm-1" checked={isRestrictTowerType} onChange={() => setRestrictTowerType(!(isRestrictTowerType))} disabled={!(isRandomizeTowers)}>
+                                        Restrict each player to one tower type?
+                                    </CustomFormSwitch>
+                                </Col>
                                 <CustomFormSlider className="mb-3 col-sm-11 offset-sm-1" controlId="tower_count" min="1" max="4" disabled={!(isRandomizeTowers)} value={maxTowers} onChange={({target:{value}}) => setMaxTowers(value)}>
                                     Towers per player:
                                 </CustomFormSlider>
