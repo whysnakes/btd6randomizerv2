@@ -8,7 +8,7 @@ import BlackBorder from './BlackBorder';
 function OptionsFormContainer(props) {
     return (
         <BlackBorder>
-            <TextBTD6Font as={"h2"} className="text-center">
+            <TextBTD6Font tag={"h2"} className="text-center">
                 Options
             </TextBTD6Font>
             <Form>
