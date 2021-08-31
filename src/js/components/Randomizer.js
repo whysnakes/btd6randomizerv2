@@ -102,7 +102,7 @@ function Randomizer() {
                                     Restrict each player to one tower type?
                                 </CustomFormSwitch>
                                 <CustomFormSlider className="ms-5 mb-3" controlId="tower_count" min="1" max="4" disabled={!(isRandomizeTowers)} value={maxTowers} onChange={({target:{value}}) => setMaxTowers(value)}>
-                                    Maximum tower options per player:
+                                    Towers per player:
                                 </CustomFormSlider>
                             </Form.Group>
 
