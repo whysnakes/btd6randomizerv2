@@ -2,7 +2,7 @@ const btd6_version = "27.1.4229"
 const randomizer_version = "2.0.0"
 
 
-const btd6_modes = [
+const btd6_modes_array = [
     "Standard Easy",
     "Primary Monkeys Only (Easy)",
     "Deflation (Easy)",
@@ -24,79 +24,13 @@ const btd6_only_modes = [
     1,4,8
 ]
 
-const btd6_towers = {
-    primary: ["Dart Monkey","Boomerang Monkey","Bomb Shooter","Tack Shooter","Ice Monkey","Glue Gunner"],
-    military: ["Sniper Monkey","Monkey Sub","Monkey Buccaneer","Monkey Ace","Heli Pilot","Mortar Monkey","Dartling Gunner"],
-    magic: ["Wizard Monkey", "Super Monkey","Ninja Monkey","Alchemist","Druid"],
-    support: ["Banana Farm","Spike Factory","Monkey Village","Engineer Monkey"]
-};
-
 
 
 /*
  * Object structure to contain the images.
  * Can be used in the future to implement the images onto the website.
  */
-const btd6_maps_object = {
-    "Monkey Meadow (Beginner)": "../static/btd6 maps png/MonkeyMeadow_no_UI.png",
-    "Tree Stump (Beginner)": "../static/btd6 maps png/TreeStump_No_UI.png",
-    "Town Center (Beginner)": "../static/btd6 maps png/TownCenter_No_UI.png",
-    "Resort (Beginner)": "../static/btd6 maps png/Resort.png",
-    "Skates (Beginner)": "../static/btd6 maps png/Skates.png",
-    "Lotus Island (Beginner)": "../static/btd6 maps png/Lotus Island.png",
-    "Candy Falls (Beginner)": "../static/btd6 maps png/CandyFalls_No_UI.png",
-    "Winter Park (Beginner)": "../static/btd6 maps png/WinterPark_No_UI.png",
-    "Carved (Beginner)": "../static/btd6 maps png/Carved_No_UI.png",
-    "Park Path (Beginner)": "../static/btd6 maps png/ParkPath_No_UI.png",
-    "Alpine Run (Beginner)": "../static/btd6 maps png/AlpineRun_No_UI.png",
-    "Frozen Over (Beginner)": "../static/btd6 maps png/FrozenOver_No_UI.png",
-    "In the Loop (Beginner)": "../static/btd6 maps png/InTheLoop_No_UI.png",
-    "Cubism (Beginner)": "../static/btd6 maps png/Cubism_No_UI.png",
-    "Four Circles (Beginner)": "../static/btd6 maps png/FourCircles_No_UI.png",
-    "Hedge (Beginner)": "../static/btd6 maps png/Hedge_No_UI.png",
-    "End of the Road (Beginner)": "../static/btd6 maps png/EndOfTheRoad_No_UI.png",
-    "Logs (Beginner)": "../static/btd6 maps png/Logs_No_UI.png",
-    "Bloonarius Prime (Intermediate)": "../static/btd6 maps png/Bloonarius_Prime_Map.png",
-    "Balance (Intermediate)": "../static/btd6 maps png/Balance.png",
-    "Encrypted (Intermediate)": "../static/btd6 maps png/Encrypted.png",
-    "Bazaar (Intermediate)": "../static/btd6 maps png/Bazaar.png",
-    "Adora's Temple (Intermediate)": "../static/btd6 maps png/AdorasTemple_No_UI.png",
-    "Spring Spring (Intermediate)": "../static/btd6 maps png/SpringSpring_No_UI.png",
-    "Kartsndarts (Intermediate)": "../static/btd6 maps png/KartsNDarts_No_UI.png",
-    "Moon Landing (Intermediate)": "../static/btd6 maps png/MoonLanding_No_UI.png",
-    "Haunted (Intermediate)": "../static/btd6 maps png/Haunted_No_UI.png",
-    "Downstream (Intermediate)": "../static/btd6 maps png/Downstream_No_UI.png",
-    "Firing Range (Intermediate)": "../static/btd6 maps png/FiringRange_No_UI.png",
-    "Cracked (Intermediate)": "../static/btd6 maps png/Cracked_No_UI.png",
-    "Streambed (Intermediate)": "../static/btd6 maps png/Streambed_No_UI.png",
-    "Chutes (Intermediate)": "../static/btd6 maps png/Chutes_No_UI.png",
-    "Rake (Intermediate)": "../static/btd6 maps png/Rake_No_UI.png",
-    "Spice Islands (Intermediate)": "../static/btd6 maps png/SpiceIslands_No_UI.png",
-    "X Factor (Advanced)": "../static/btd6 maps png/X Factor.png",
-    "Mesa (Advanced)": "../static/btd6 maps png/Mesa_No_UI.png",
-    "Geared (Advanced)": "../static/btd6 maps png/Geared_No_UI.png",
-    "Spillway (Advanced)": "../static/btd6 maps png/Spillway_No_UI.png",
-    "Cargo (Advanced)": "../static/btd6 maps png/Cargo_No_UI.png",
-    "Pat's Pond (Advanced)": "../static/btd6 maps png/PatsPond_No_UI.png",
-    "Peninsula (Advanced)": "../static/btd6 maps png/Peninsula_No_UI.png",
-    "High Finance (Advanced)": "../static/btd6 maps png/HighFinance_No_UI.png",
-    "Another Brick (Advanced)": "../static/btd6 maps png/AnotherBrick_No_UI.png",
-    "Off the Coast (Advanced)": "../static/btd6 maps png/OffTheCoast_No_UI.png",
-    "Cornfield (Advanced)": "../static/btd6 maps png/Cornfield_No_UI.png",
-    "Underground (Advanced)": "../static/btd6 maps png/Underground_No_UI.png",
-    "Sanctuary (Expert)": "../static/btd6 maps png/Sanctuary.png",
-    "Ravine (Expert)": "../static/btd6 maps png/Ravine.png",
-    "Flooded Valley (Expert)": "../static/btd6 maps png/Flooded_Valley_No_UI.png",
-    "Infernal (Expert)": "../static/btd6 maps png/Infernal_No_UI.png",
-    "Bloody Puddles (Expert)": "../static/btd6 maps png/BloodyPuddles_No_UI.png",
-    "Workshop (Expert)": "../static/btd6 maps png/Workshop_No_UI.png",
-    "Quad (Expert)": "../static/btd6 maps png/Quad_No_UI.png",
-    "Dark Castle (Expert)": "../static/btd6 maps png/DarkCastle_No_UI.png",
-    "Muddy Puddles (Expert)": "../static/btd6 maps png/MuddyPuddles_No_UI.png",
-    "#Ouch (Expert)": "../static/btd6 maps png/Ouch_No_UI.png"
-};
-
-const btd6_maps_by_difficulty_object = {
+const btd6_maps = {
     Beginner: {
     "Monkey Meadow": "../static/btd6 maps png/MonkeyMeadow_no_UI.png",
     "Tree Stump": "../static/btd6 maps png/TreeStump_No_UI.png",
@@ -162,7 +96,7 @@ const btd6_maps_by_difficulty_object = {
     }
 };
 
-const btd6_heroes_object = {
+const btd6_heroes = {
     "Quincy": "../static/btd6 heroes png/QuincyPortrait.png",
     "Gwendolin": "../static/btd6 heroes png/GwendolinPortrait.png",
     "Striker Jones": "../static/btd6 heroes png/Striker_Jones.png",
@@ -178,7 +112,7 @@ const btd6_heroes_object = {
     "Psi": "../static/btd6 heroes png/PsiPortrait.png",
 };
 
-const btd6_towers_object = {
+const btd6_towers = {
     primary: {
         "Dart Monkey": "../static/btd6 towers png/100-DartMonkey.png",
         "Boomerang Monkey": "../static/btd6 towers png/BTD6_Boomerang_Monkey.png",
@@ -214,11 +148,9 @@ const btd6_towers_object = {
 export {
     btd6_version,
     randomizer_version,
-    btd6_modes,
+    btd6_modes_array,
     btd6_only_modes,
+    btd6_maps,
+    btd6_heroes,
     btd6_towers,
-    btd6_maps_object,
-    btd6_maps_by_difficulty_object,
-    btd6_heroes_object,
-    btd6_towers_object,
 };

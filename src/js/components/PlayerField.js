@@ -5,7 +5,7 @@ import ResultsCard from './ResultsCard';
 
 
 const TowerListItem = (props) => {
-    return <TextBTD6Font tag={"li"} className="list-group-item">Tower {props.towerNo}: {props.tower}</TextBTD6Font>;
+    return <TextBTD6Font as={"li"} className="list-group-item">Tower {props.towerNo}: {props.tower}</TextBTD6Font>;
 }
 
 const PlayerField = (props) => {
@@ -13,11 +13,11 @@ const PlayerField = (props) => {
     for (let i = 1; i <= props.towers.length; i++) {
         towers.push(<TowerListItem towerNo={i} tower={props.towers[i-1]} />);
     }
-    const title = props.playerName.length > 0 ? props.playerName : "Player ".concat(props.playerNo);
+
     return (
-        <ResultsCard title={title}>
+        <ResultsCard title={props.playerName}>
             <ul className="list-group list-group flush">
-                {props.hero && <TextBTD6Font tag={"li"} className="list-group-item">Hero: {props.hero}</TextBTD6Font>}
+                {props.hero && <TextBTD6Font as={"li"} className="list-group-item">Hero: {props.hero}</TextBTD6Font>}
                 {props.towers.length > 0 && towers}
             </ul>
         </ResultsCard>
