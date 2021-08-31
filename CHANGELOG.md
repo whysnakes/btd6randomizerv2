@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.1.0 (2021-08-31)
+
+ - Added sliders for the following:
+    - Number of players
+    - Number of towers per player
+ - Added the ability to customize player names
+ - Fixed the alignment of buttons and text in the Options section
+
 ## 2.0.0 (2021-08-18)
 
 Rewrote the app in React. This will help facilitate the development of more advanced features. Stay tuned. ;)
