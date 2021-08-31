@@ -104,7 +104,7 @@ function Randomizer() {
                                     </Form.Text>
                                 </Col>
                                 <Col sm={{span: 11, offset: 1}}>
-                                    <CustomFormSwitch className="col-sm-11 offset-sm-1" checked={isRestrictTowerType} onChange={() => setRestrictTowerType(!(isRestrictTowerType))} disabled={!(isRandomizeTowers)}>
+                                    <CustomFormSwitch checked={isRestrictTowerType} onChange={() => setRestrictTowerType(!(isRestrictTowerType))} disabled={!(isRandomizeTowers)}>
                                         Restrict each player to one tower type?
                                     </CustomFormSwitch>
                                 </Col>
