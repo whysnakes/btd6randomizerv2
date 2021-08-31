@@ -13,7 +13,7 @@ function Results(props) {
         const towerCount = towers.length / playerCount;
         if (heroes.length > 0 || towers.length > 0) {
             for (let i = 1; i <= playerCount; i++) {
-                choices.push(<PlayerField playerNo={i} hero={heroes[i-1]} towers={towers.slice((i - 1) * towerCount, i * towerCount)} />);
+                choices.push(<PlayerField playerNo={i} playerName={playerNames[i-1]} hero={heroes[i-1]} towers={towers.slice((i - 1) * towerCount, i * towerCount)} />);
             }
         }
         return choices;
@@ -41,7 +41,7 @@ function Results(props) {
                 </ResultsCard>
             }
 
-            {random_player_choices(props.playerCount, props.randomHeroes, props.randomTowers)}
+            {random_player_choices(props.playerCount, props.playerNames, props.randomHeroes, props.randomTowers)}
 
         </BlackBorder>
     );

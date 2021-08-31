@@ -23,6 +23,7 @@ function Randomizer() {
     const [randomMode, setRandomMode] = useState("");
     const [randomHeroes, setRandomHeroes] = useState([]);
     const [randomTowers, setRandomTowers] = useState([]);
+    const [final_playerNames, setFinal_playerNames] = useState(["", "", "", ""]);
 
     function generateRandomOptions(e) {
         e.preventDefault();  // Prevents the default behaviour of refreshing a page when submitting a form.
@@ -34,6 +35,7 @@ function Randomizer() {
         setRandomTowers([]);
 
         setFinal_playerCount(playerCount);
+        setFinal_playerNames(playerNames);
 
         if (isRandomizeMap) {
             setRandomMap(randomizer.getRandomMap());
@@ -67,20 +69,35 @@ function Randomizer() {
         }
     }
 
+    function player_name_inputs(count) {
+        function setName(name, index) {
+            const names = [...playerNames];
+            names[index] = name;
+            setPlayerNames(names);
+        }
+
+        const inputs = [];
+        for (let i = 0; i < count; i++) {
+            inputs.push(<PlayerNameInput key={i} i={i + 1} value={playerNames[i]} onChange={({target: {value}}) => {setName(value, i)}} />);
+        }
+        return inputs;
+    }
+
     return (
         <Container>
             <Row>
                 <Col>
                     <div className="Options">
                         <OptionsFormContainer onSubmit={generateRandomOptions}>
-                            <Form.Group as={Row} className="mb-3" controlId="player_count">
-                                <Form.Label column sm="auto">
-                                    Number of players:
-                                </Form.Label>
-                                <Col sm="auto">
-                                    <Form.Control type="number" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)} />
-                                </Col>
-                            </Form.Group>
+
+                        <Form.Group as={Row} className="mb-3" controlId="player_count">
+                            <Form.Label column sm="auto">
+                                Number of players:
+                            </Form.Label>
+                            <Col sm="auto">
+                                <Form.Control type="number" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)} />
+                            </Col>
+                        </Form.Group>
 
                             <CustomFormSwitch className="mb-3" checked={isRandomizeMap} onChange={() => setRandomizeMap(!(isRandomizeMap))}>
                                 Randomize Map?
