@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 
 import CustomFormSwitch from './CustomFormSwitch';
+import CustomFormSlider from './CustomFormSlider';
 import OptionsFormContainer from './OptionsFormContainer';
 import Results from './Results';
 import * as randomizer from '../btd6randomizer';
@@ -105,14 +106,12 @@ function Randomizer() {
                     <div className="Options">
                         <OptionsFormContainer onSubmit={generateRandomOptions}>
 
-                            <Form.Group as={Row} className="mb-3" controlId="player_count">
-                                <Form.Label column sm="auto">
+                            {/* offset this option to align with other options */}
+                            <Row>
+                                <CustomFormSlider className="col-sm-11 offset-sm-1 mb-3" controlId="player_count" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)}>
                                     Number of players:
-                                </Form.Label>
-                                <Col sm="auto">
-                                    <Form.Control type="number" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)} />
-                                </Col>
-                            </Form.Group>
+                                </CustomFormSlider>
+                            </Row>
 
                             <div className="accordion mb-3" id="playerCount">
                                 <div className="accordion-item">
@@ -145,28 +144,21 @@ function Randomizer() {
                                 <CustomFormSwitch checked={isRandomizeTowers} onChange={() => setRandomizeTowers(!(isRandomizeTowers))}>
                                     Randomize Towers?
                                 </CustomFormSwitch>
-                                <Form.Text muted className="text-start ms-5">
-                                    This option prevents <strong>X Monkeys Only</strong> modes from being picked.
-                                </Form.Text>
-                                <CustomFormSwitch className="ms-5" checked={isRestrictTowerType} onChange={() => setRestrictTowerType(!(isRestrictTowerType))} disabled={!(isRandomizeTowers)}>
-                                    Restrict each player to one tower type?
-                                </CustomFormSwitch>
-                                <Form.Group as={Row} className="ms-5 mb-3" controlId="tower_count">
-                                    <Form.Label column sm="auto">
-                                        Maximum tower options per player:
-                                    </Form.Label>
-                                    <Col sm="auto">
-                                        <Form.Control
-                                            type="number"
-                                            min="1"
-                                            max="4"
-                                            disabled={!(isRandomizeTowers)}
-                                            value={maxTowers}
-                                            onChange={({target:{value}}) => setMaxTowers(value)}
-                                        />
-                                    </Col>
-                                </Form.Group>
+                                <Col sm={{span: 11, offset: 1}}>
+                                    <Form.Text muted className="text-start ms-2">
+                                        This option prevents <strong>X Monkeys Only</strong> modes from being picked.
+                                    </Form.Text>
+                                </Col>
+                                <Col sm={{span: 11, offset: 1}}>
+                                    <CustomFormSwitch checked={isRestrictTowerType} onChange={() => setRestrictTowerType(!(isRestrictTowerType))} disabled={!(isRandomizeTowers)}>
+                                        Restrict each player to one tower type?
+                                    </CustomFormSwitch>
+                                </Col>
+                                <CustomFormSlider className="mb-3 col-sm-11 offset-sm-1" controlId="tower_count" min="1" max="4" disabled={!(isRandomizeTowers)} value={maxTowers} onChange={({target:{value}}) => setMaxTowers(value)}>
+                                    Towers per player:
+                                </CustomFormSlider>
                             </Form.Group>
+
                         </OptionsFormContainer>
                     </div>
                 </Col>

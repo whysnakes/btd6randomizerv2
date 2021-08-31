@@ -1,5 +1,5 @@
 const btd6_version = "27.1.4229"
-const randomizer_version = "2.0.0"
+const randomizer_version = "2.1.0"
 
 
 const btd6_modes_array = [
