@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.1.0 (2021-08-31)
+
+### Additions
+
+- Added a popup when no randomizing options have been selected to notify the user (this was present pre-v2.0 but went missing in v2.0)
+- Added the ability to customize player names
+ 
+### Aesthetic Changes
+
+ - Fixed the alignment of buttons and text in the Options section
+ - Added sliders for the following:
+   - Number of players
+   - Number of towers per player
+
+
 ## 2.0.0 (2021-08-18)
 
 Rewrote the app in React. This will help facilitate the development of more advanced features. Stay tuned. ;)
