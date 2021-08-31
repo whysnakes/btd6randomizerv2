@@ -75,7 +75,7 @@ function Randomizer() {
                     <div className="Options">
                         <OptionsFormContainer onSubmit={generateRandomOptions}>
 
-                            <CustomFormSlider className="ms-5 mb-3" controlId="player_count" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)}>
+                            <CustomFormSlider className="col-sm-11 offset-sm-1 mb-3" controlId="player_count" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)}>
                                 Number of players:
                             </CustomFormSlider>
 
@@ -101,7 +101,7 @@ function Randomizer() {
                                 <CustomFormSwitch className="ms-5" checked={isRestrictTowerType} onChange={() => setRestrictTowerType(!(isRestrictTowerType))} disabled={!(isRandomizeTowers)}>
                                     Restrict each player to one tower type?
                                 </CustomFormSwitch>
-                                <CustomFormSlider className="ms-5 mb-3" controlId="tower_count" min="1" max="4" disabled={!(isRandomizeTowers)} value={maxTowers} onChange={({target:{value}}) => setMaxTowers(value)}>
+                                <CustomFormSlider className="mb-3 col-sm-11 offset-sm-1" controlId="tower_count" min="1" max="4" disabled={!(isRandomizeTowers)} value={maxTowers} onChange={({target:{value}}) => setMaxTowers(value)}>
                                     Towers per player:
                                 </CustomFormSlider>
                             </Form.Group>
