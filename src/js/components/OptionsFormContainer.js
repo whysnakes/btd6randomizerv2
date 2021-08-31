@@ -13,7 +13,7 @@ function OptionsFormContainer(props) {
             </TextBTD6Font>
             <Form>
                 {props.children}
-                <Button type="button" id="generator_btn" className="col-sm-3 btn btn-primary mt-5 mb-3" onClick={props.onSubmit}>
+                <Button type="button" id="generator_btn" className="btn btn-primary btn-center mt-5 mb-3" onClick={props.onSubmit}>
                     Generate
                 </Button>
             </Form>
