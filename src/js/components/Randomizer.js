@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Accordion, Card, FormGroup } from 'react-bootstrap';
+import { Container, Row, Col, Form } from 'react-bootstrap';
 
 import CustomFormSwitch from './CustomFormSwitch';
 import OptionsFormContainer from './OptionsFormContainer';
@@ -91,28 +91,28 @@ function Randomizer() {
                 <Col>
                     <div className="Options">
                         <OptionsFormContainer onSubmit={generateRandomOptions}>
-                            <Accordion>
-                                <Card>
-                                    <Card.Header as={FormGroup, Row}>
-                                        <Form.Label column sm="auto">
-                                            Number of players:
-                                        </Form.Label>
-                                        <Col sm="auto">
-                                            <Form.Control type="number" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)} />
-                                        </Col>
-                                        <Col>
-                                            <Accordion.Toggle eventKey="0">
-                                                Expand
-                                            </Accordion.Toggle>
-                                        </Col>
-                                    </Card.Header>
-                                    <Accordion.Collapse eventKey="0">
-                                        <Card.Body>
-                                            {player_name_inputs(playerCount)}
-                                        </Card.Body>
-                                    </Accordion.Collapse>
-                                </Card>
-                            </Accordion>
+
+                            <div className="accordion" id="playerCount">
+                                <div className="accordion-item">
+                                    <h2 className="accordion-header" id="playerCountHeader">
+                                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#playerCountContent" aria-expanded="false" aria-controls="playerCountContent">
+                                            <Form.Group as={Row} controlId="player_count">
+                                                <Form.Label column sm="auto">
+                                                    Number of players:
+                                                </Form.Label>
+                                                <Col sm="auto">
+                                                    <Form.Control type="number" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)} />
+                                                </Col>
+                                            </Form.Group>
+                                        </button>
+                                    </h2>
+                                    <div id="playerCountContent" className="accordion-collapse collapse" aria-labelledby="playerCountHeader" data-bs-parent="#playerCount">
+                                        <div className="accordion-body">
+                                        {player_name_inputs(playerCount)}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <CustomFormSwitch className="mb-3" checked={isRandomizeMap} onChange={() => setRandomizeMap(!(isRandomizeMap))}>
                                 Randomize Map?
