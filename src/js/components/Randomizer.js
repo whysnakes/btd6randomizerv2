@@ -75,7 +75,7 @@ function Randomizer() {
                     <div className="Options">
                         <OptionsFormContainer onSubmit={generateRandomOptions}>
 
-                            <CustomFormSlider className="mb-3" controlId="player_count" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)}>
+                            <CustomFormSlider className="ms-5 mb-3" controlId="player_count" min="1" max="4" value={playerCount} onChange={({target:{value}}) => setPlayerCount(value)}>
                                 Number of players:
                             </CustomFormSlider>
 
