@@ -5,7 +5,7 @@ import { Row, Col, Form } from 'react-bootstrap';
 function CustomFormSlider(props) {
     return (
         <Form.Group as={Row} className={props.className} controlId={props.controlId}>
-            <Form.Label className="text-start" column sm="auto">
+            <Form.Label className="text-start align-middle" column sm={5}>
                 {props.children}
             </Form.Label>
             <Col sm={4} className="my-auto">
@@ -18,7 +18,7 @@ function CustomFormSlider(props) {
                     onChange={props.onChange}
                 />
             </Col>
-            <Col sm={2}>
+            <Col sm={3}>
                 <Form.Control
                     type="number"
                     min={props.min}
