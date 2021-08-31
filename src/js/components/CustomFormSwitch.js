@@ -4,8 +4,8 @@ import { Row, Col, Form } from 'react-bootstrap';
 
 function CustomFormSwitch(props) {
     return (
-        <Form.Group as={Row} className={props.className}>
             <Col sm="auto" className="pt-2">
+            <Col sm={1} className="px-0 pt-2">
                 <div className="form-check form-switch">
                     <input
                         disabled={props.disabled}
@@ -16,7 +16,7 @@ function CustomFormSwitch(props) {
                     />
                 </div>
             </Col>
-            <Form.Label column sm="auto">
+            <Form.Label column sm={11} className="text-start ps-2">
                 {props.children}
             </Form.Label>
         </Form.Group>
