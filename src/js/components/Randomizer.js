@@ -40,6 +40,11 @@ function Randomizer() {
         setFinal_playerCount(playerCount);
         setFinalNames();
 
+        if (!isRandomizeMap && !isRandomizeMode && !isRandomizeHeroes && !isRandomizeTowers )
+        {
+            alert("Please select at least one option to randomize");
+        }
+
         if (isRandomizeMap) {
             setRandomMap(randomizer.getRandomMap());
         }
