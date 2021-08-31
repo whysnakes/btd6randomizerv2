@@ -43,6 +43,7 @@ function Randomizer() {
         if (!isRandomizeMap && !isRandomizeMode && !isRandomizeHeroes && !isRandomizeTowers )
         {
             alert("Please select at least one option to randomize");
+            return;
         }
 
         if (isRandomizeMap) {
