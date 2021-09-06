@@ -11,7 +11,7 @@ const TowerListItem = (props) => {
 const PlayerField = (props) => {
     const towers = [];
     for (let i = 1; i <= props.towers.length; i++) {
-        towers.push(<TowerListItem towerNo={i} tower={props.towers[i-1]} />);
+        towers.push(<TowerListItem towerNo={i} tower={props.towers[i-1]} key={i} />);
     }
 
     return (
